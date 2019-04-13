@@ -4,7 +4,7 @@ sandbox for cloud computing map reduce jobs
 
 ***Run in command line***
 ```
-python3 mr_word_count.py data/pg27827.txt
+python3 mr_word_count.py < data/pg27827.txt
 ```
 
 **Run in command line and output to a file**

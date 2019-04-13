@@ -1,4 +1,7 @@
+# From http://mrjob.readthedocs.org/en/latest/guides/quickstart.html#writing-your-first-job
+
 from mrjob.job import MRJob
+
 
 class MRWordFrequencyCount(MRJob):
 
