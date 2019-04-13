@@ -15,3 +15,8 @@ python3 mr_count_freq_words.py data/pg27827.txt --output-dir=freq_word_count_out
 ```
 !python3 ipynb_map_reduce_cc1_top10.py -r local ./data/shortjokes.csv --output-dir=ipynb_map_reduce_cc1_top10_out --no-output
 ```
+
+***Run on AWS EMR***
+```
+!python3 ipynb_map_reduce_cc1_top10.py -r emr s3://cc1top10/shortjokes.csv --output-dir=s3://cc1top10/output --no-output
+```
