@@ -14,7 +14,7 @@ class MRCC1TOP10(MRJob):
             MRStep(mapper=self.mapper_get_words,
                    combiner=self.combiner_count_words,
                    reducer=self.reducer_count_words),
-            MRStep(reducer=self.reducer_find_max_word)
+            MRStep(reducer=self.reducer_find_top10_word)
         ]
     
     def mapper_get_words(self, _, line):
@@ -30,7 +30,7 @@ class MRCC1TOP10(MRJob):
         #yield (value, sum(counts))
         yield None, (sum(counts), value)
     
-    def reducer_find_max_word(self, _, word_count_pairs):
+    def reducer_find_top10_word(self, _, word_count_pairs):
         # each item of word_count_pairs is (count, word),
         # so yielding one results in key=counts, value=word
         list_descending = sorted(word_count_pairs, reverse = True)
