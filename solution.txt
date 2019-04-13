@@ -1,0 +1,6 @@
+
+coursework 1 files included in this folder:
+1- Jupyter Notebook file:           map_reduce_cc1_top10.ipynb
+2- Python File created by Jupyter:  ipynb_map_reduce_cc1_top10.py
+3- The output results for top10:    ipynb_map_reduce_cc1_top10
+

@@ -34,7 +34,7 @@ class MRCC1TOP10(MRJob):
         # each item of word_count_pairs is (count, word),
         # so yielding one results in key=counts, value=word
         list_descending = sorted(word_count_pairs, reverse = True)
-        yield ("top 10", list_descending[0:9])
+        yield ("top 10", list_descending[0:10])
 
 if __name__ == '__main__':
     MRCC1TOP10.run()
