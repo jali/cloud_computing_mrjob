@@ -9,14 +9,16 @@ WORD_RE = re.compile(r"[\w']+")
 class MRWordFreqCount(MRJob):
 
     def mapper(self, _, line):
-        for word in WORD_RE.findall(line):
-            yield (word.lower(), 1)
+        the_line = WORD_RE.findall(line)
+        for key, value in enumerate(the_line):
+            if (value == "my" and (key + 1 < len(the_line))):
+                yield (value + "," + the_line[key+1].lower(), 1)
 
-    def combiner(self, word, counts):
-        yield (word, sum(counts))
+    def combiner(self, value, counts):
+        yield (value, sum(counts))
 
-    def reducer(self, word, counts):
-        yield (word, sum(counts))
+    def reducer(self, value, counts):
+        yield (value, sum(counts))
 
 
 if __name__ == '__main__':
